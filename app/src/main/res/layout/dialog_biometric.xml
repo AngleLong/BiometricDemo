@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100pt"
+        android:text="@string/biometric_dialog_title"
+        android:textSize="30pt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/srcTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50pt"
+        android:layout_marginTop="50pt"
+        android:text="@string/biometric_dialog_des"
+        android:textSize="28pt"
+        android:layout_marginRight="50pt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <ImageView
+        android:id="@+id/iconIv"
+        android:contentDescription="@string/app_name"
+        android:layout_marginTop="50pt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/ic_fp_40px"
+        android:layout_width="80pt"
+        android:layout_height="80pt"
+        app:layout_constraintTop_toBottomOf="@id/srcTv"/>
+
+    <TextView
+        android:id="@+id/descTv"
+        android:layout_marginTop="50pt"
+        app:layout_constraintTop_toBottomOf="@id/iconIv"
+        android:textSize="25pt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:text="@string/biometric_dialog_des"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/cancelTv"
+        android:layout_width="wrap_content"
+        android:layout_height="80pt"
+        android:gravity="center"
+        android:padding="20pt"
+        android:text="Cancel"
+        android:textSize="30pt"
+        android:textColor="#194169"
+        android:layout_marginTop="50pt"
+        app:layout_constraintTop_toBottomOf="@id/descTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/passwordTv"
+        android:layout_width="wrap_content"
+        android:layout_height="80pt"
+        android:gravity="center"
+        android:padding="20pt"
+        android:layout_marginRight="20pt"
+        android:text="@string/biometric_dialog_use_password"
+        android:textSize="30pt"
+        android:textColor="#194169"
+        android:layout_marginTop="50pt"
+        app:layout_constraintTop_toBottomOf="@id/descTv"
+        app:layout_constraintRight_toLeftOf="@id/cancelTv"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
