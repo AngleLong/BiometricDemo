@@ -12,7 +12,7 @@ import androidx.annotation.RequiresApi;
 
 import com.angle.biometricdemo.App;
 import com.angle.biometricdemo.R;
-import com.angle.biometricdemo.SharedPreferencesUtils;
+import com.angle.biometricdemo.utils.SharedPreferencesUtils;
 
 import java.security.Signature;
 

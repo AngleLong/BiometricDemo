@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.angle.biometricdemo.biometric.AsymmetricHelper;
 import com.angle.biometricdemo.biometric.BiometricPromptManager;
 import com.angle.biometricdemo.biometric.OnBiometricIdentifyCallback;
+import com.angle.biometricdemo.utils.AdaptScreenUtils;
 
 import java.security.PublicKey;
 import java.security.Signature;

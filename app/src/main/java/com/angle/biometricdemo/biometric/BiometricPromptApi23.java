@@ -11,7 +11,7 @@ import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
 import androidx.core.os.CancellationSignal;
 
 import com.angle.biometricdemo.App;
-import com.angle.biometricdemo.SharedPreferencesUtils;
+import com.angle.biometricdemo.utils.SharedPreferencesUtils;
 
 import java.security.Signature;
 

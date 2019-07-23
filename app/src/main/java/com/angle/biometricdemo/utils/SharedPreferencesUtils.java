@@ -1,4 +1,4 @@
-package com.angle.biometricdemo;
+package com.angle.biometricdemo.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

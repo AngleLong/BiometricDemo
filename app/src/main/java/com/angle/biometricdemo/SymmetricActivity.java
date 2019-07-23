@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.angle.biometricdemo.biometric.BiometricPromptManager;
 import com.angle.biometricdemo.biometric.OnBiometricIdentifyCallback;
 import com.angle.biometricdemo.biometric.SymmetricHelper;
+import com.angle.biometricdemo.utils.AdaptScreenUtils;
 
 import java.security.Signature;
 
@@ -57,11 +58,16 @@ public class SymmetricActivity extends AppCompatActivity {
         mDecryptTv = findViewById(R.id.decryptTv);
 
         mBeforeEncryptionTv.setText(data);
+
+        //创建相应的对象
+        mBiometricPromptManager = BiometricPromptManager.from(this);
     }
 
 
     public void biometricClick(View view) {
-        mBiometricPromptManager = BiometricPromptManager.from(this);
+        if(!mBiometricPromptManager.isBiometricPromptEnable()){
+            return;
+        }
         Cipher encryptCipher = SymmetricHelper.getInstance().getEncryptCipher();
         mBiometricPromptManager.authenticate(encryptCipher, new OnBiometricIdentifyCallback() {
             @Override
@@ -117,6 +123,9 @@ public class SymmetricActivity extends AppCompatActivity {
     }
 
     public void decryptBtn(View view) {
+        if(!mBiometricPromptManager.isBiometricPromptEnable()){
+            return;
+        }
         //解密相应的数据
         if (!TextUtils.isEmpty(mEncryptionStr)) {
             mBiometricPromptManager = BiometricPromptManager.from(this);

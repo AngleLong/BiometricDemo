@@ -1,8 +1,10 @@
-package com.angle.biometricdemo;
+package com.angle.biometricdemo.utils;
 
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 import android.util.Log;
+
+import com.angle.biometricdemo.App;
 
 import java.lang.reflect.Field;
 
