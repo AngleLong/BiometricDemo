@@ -66,7 +66,7 @@ public class AsymmetricActivity extends AppCompatActivity {
     public void biometricClick(View view) {
         //调用指纹对话框
         if (mBiometricPromptManager.isBiometricPromptEnable()) {
-            Signature signature = AsymmetricHelper.getInstance().getSignature();
+            Signature signature = AsymmetricHelper.getInstance().getPrivateSignature();
             mBiometricPromptManager.authenticate(signature, new OnBiometricIdentifyCallback() {
                 @Override
                 public void onUsePassword() {
@@ -122,7 +122,7 @@ public class AsymmetricActivity extends AppCompatActivity {
                  * 这里是直接从本地获取相应的公钥信息进行处理的,
                  * 如果你想想获取私钥的话,这里直接使用publicKey.getEncoded()获取一个byte数组进行相应的base64加密就可以了
                  * 开始我这里面还纠结一个问题,我传到服务器之后,服务器怎么转换成公钥呢?
-                 *
+                 * 可以看utils中的ServerCreateKey这个类
                  */
                 Signature signature = AsymmetricHelper.getInstance().getSignature();
                 PublicKey publicKey = AsymmetricHelper.getInstance().getPublicKey();

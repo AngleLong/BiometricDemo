@@ -11,6 +11,7 @@ import androidx.annotation.RequiresApi;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.KeyStore;
+import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.Signature;
@@ -124,7 +125,7 @@ public class AsymmetricHelper {
      *
      * @return 相应的对象
      */
-    public Signature getSignature() {
+    public Signature getPrivateSignature() {
         try {
             Signature signature = Signature.getInstance("SHA256withECDSA");
             PrivateKey privateKey = getPrivateKey();
@@ -134,5 +135,18 @@ public class AsymmetricHelper {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * 获取相应的Signature
+     * @return Signature对象
+     */
+    public Signature getSignature() {
+        try {
+            return Signature.getInstance("SHA256withECDSA");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
